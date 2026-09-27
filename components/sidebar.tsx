@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV = [
   {
@@ -88,7 +89,7 @@ export function Sidebar() {
 
   return (
     <>
-      <div className="sticky top-0 z-40 flex items-center gap-3 border-b bg-sidebar px-4 py-3 lg:hidden">
+      <div className="sticky top-0 z-40 flex items-center gap-3 border-b bg-sidebar px-3 py-2.5 lg:hidden">
         <Button
           variant="ghost"
           size="icon"
@@ -97,7 +98,10 @@ export function Sidebar() {
         >
           <Menu className="h-5 w-5" />
         </Button>
-        <span className="font-display text-lg font-semibold">COVELETTGEN</span>
+        <span className="flex-1 truncate font-display text-base font-semibold sm:text-lg">
+          COVELETTGEN
+        </span>
+        <ThemeToggle />
       </div>
 
       {open && (

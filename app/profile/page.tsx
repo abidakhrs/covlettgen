@@ -108,7 +108,7 @@ export default function ProfilePage() {
               if (f) upload(f);
             }}
             onClick={() => fileRef.current?.click()}
-            className={`flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed p-8 text-center transition-colors ${
+            className={`flex min-h-[160px] cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed p-6 text-center transition-colors sm:p-8 ${
               dragging
                 ? "border-primary bg-primary/5"
                 : "border-border hover:border-primary/50 hover:bg-accent/40"

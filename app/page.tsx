@@ -263,17 +263,20 @@ export default function GeneratePage() {
       </header>
 
       {needsKey && (
-        <div className="flex items-start gap-3 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm">
-          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+        <div className="flex flex-col gap-3 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm sm:flex-row sm:items-start">
+          <AlertTriangle className="hidden h-4 w-4 shrink-0 text-amber-500 sm:block sm:mt-0.5" />
           <div className="flex-1">
-            <p className="font-medium">No API key configured</p>
+            <p className="flex items-center gap-2 font-medium">
+              <AlertTriangle className="h-4 w-4 shrink-0 text-amber-500 sm:hidden" />
+              No API key configured
+            </p>
             <p className="text-muted-foreground">
               Add one on the Settings page to generate letters.
             </p>
           </div>
-          <Button asChild size="sm" variant="outline">
+          <Button asChild size="sm" variant="outline" className="w-full sm:w-auto">
             <Link href="/settings">
-              <Settings2 className="h-4 w-4" /> Open
+              <Settings2 className="h-4 w-4" /> Open settings
             </Link>
           </Button>
         </div>
@@ -450,14 +453,14 @@ export default function GeneratePage() {
 
       {letter && (
         <Card className="animate-in fade-in slide-in-from-bottom-2">
-          <CardHeader className="flex-row items-center justify-between space-y-0 pb-4">
+          <CardHeader className="flex-col gap-4 space-y-0 pb-4 sm:flex-row sm:items-center sm:justify-between sm:gap-2">
             <div className="space-y-1">
               <CardTitle className="text-lg">Your cover letter</CardTitle>
               <p className="text-xs text-muted-foreground">
                 Editable — changes apply to the downloads.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid w-full grid-cols-3 gap-2 sm:flex sm:w-auto sm:flex-wrap">
               <Button variant="outline" size="sm" onClick={copyLetter}>
                 {copied ? (
                   <>
