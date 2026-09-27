@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 220 20% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 14%;
+
+    --primary: 220 45% 22%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 40 20% 95%;
+    --muted-foreground: 220 12% 46%;
+
+    --accent: 40 45% 92%;
+    --accent-foreground: 220 25% 20%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 220 45% 30%;
+
+    --sidebar: 40 28% 96%;
+    --sidebar-foreground: 220 20% 20%;
+    --sidebar-primary: 220 45% 22%;
+    --sidebar-accent: 40 25% 91%;
+    --sidebar-border: 40 15% 87%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 24% 9%;
+    --foreground: 40 25% 94%;
+
+    --card: 222 22% 12%;
+    --card-foreground: 40 25% 94%;
+
+    --popover: 222 22% 12%;
+    --popover-foreground: 40 25% 94%;
+
+    --primary: 40 55% 88%;
+    --primary-foreground: 222 30% 12%;
+
+    --secondary: 222 18% 18%;
+    --secondary-foreground: 40 25% 94%;
+
+    --muted: 222 18% 17%;
+    --muted-foreground: 220 12% 62%;
+
+    --accent: 222 18% 20%;
+    --accent-foreground: 40 25% 94%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 16% 20%;
+    --input: 222 16% 22%;
+    --ring: 40 45% 70%;
+
+    --sidebar: 222 26% 7%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 40 55% 88%;
+    --sidebar-accent: 222 18% 16%;
+    --sidebar-border: 222 16% 16%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 999px;
+  border: 2px solid hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
